@@ -3,7 +3,7 @@
 
 XMLTV binaries from iuuuuan/xmltv but adding xmltv2vdr script and https://github.com/chrodriguez/vdr-ar-analog-channels
 
-docker build --rm=true -t "chrodriguez/xmltv-docker" .
+docker build --rm=true -t "chrodriguez/xmltv" .
 
 # Using image
 
