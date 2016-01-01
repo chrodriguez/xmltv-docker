@@ -33,5 +33,8 @@ RUN bash -l -c 'for v in $(cat /root/versions.txt); do rbenv global $v; gem inst
 
 RUN git clone https://github.com/chrodriguez/vdr-ar-analog-channels.git /opt/vdr-ar-channels
 
+# Soporte de LWP::Protocol::https
+RUN apt-get -y update && apt-get install -y --force-yes liblwp-protocol-https-perl
+
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
