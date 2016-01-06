@@ -1,3 +1,4 @@
+ENV VERSION_XMLTV="0.5.67"
 FROM iuuuuan/xmltv
 MAINTAINER chrodriguez <chrodriguez@gmail.com>
 ADD https://github.com/chrodriguez/xmltv2vdr/archive/1.0.0.tar.gz /tmp/1.0.0.tar.gz
@@ -34,7 +35,5 @@ RUN bash -l -c 'for v in $(cat /root/versions.txt); do rbenv global $v; gem inst
 RUN git clone https://github.com/chrodriguez/vdr-ar-analog-channels.git /opt/vdr-ar-channels
 
 # Soporte de LWP::Protocol::https
-RUN apt-get -y update && apt-get install -y --force-yes liblwp-protocol-https-perl
-
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN cpan install LWP::Protocol::https && rm -rf /root/.cpan
 
