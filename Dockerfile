@@ -37,3 +37,4 @@ RUN git clone https://github.com/chrodriguez/vdr-ar-analog-channels.git /opt/vdr
 # Soporte de LWP::Protocol::https
 RUN cpan install LWP::Protocol::https && rm -rf /root/.cpan
 
+COPY patches/tv_grab_ar /usr/local/bin/
